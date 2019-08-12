@@ -1,0 +1,9 @@
+# git-helpers
+
+A simple library of custom commands to git
+
+## Commands
+
+Working with a repo and a private fork:
+- *push-both*: Pushes to both remotes at once
+- *sync*: Syncs master between repositories and rebases current branch to the last version of master

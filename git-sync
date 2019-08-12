@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Pulls master from original repo, syncs it up to the folk, and rebases current work to the new master
+
+# How to make it work:
+# 1. Save it in your computer. Conditions:
+#   - Should be accesible via $PATH
+#   - Name should be prefixed with "git-" and without any extension. In my case, it is "git-sync". The name will be the command.
+# 2. Setup your variables
+# 3. Use it. In my case is "git sync" everywhere
+
+# Conf
+origin_remote="origin"
+fork_remote="mb"
+# End conf
+
+source githelpers.sh
+
+# Get current branch
+branch="$(git branch | grep \* | cut -d ' ' -f2)"
+h1 "Sync $branch"
+
+# Update master and push to fork
+h2 "(1/2) Updating master..."
+git checkout master
+git pull $spin_remote
+git push $origin_remote
+
+#Rebase branch to master and force push it to both remotes
+h2 "(2/2) Rebasing current branch..."
+git checkout $branch
+git rebase master
+git push -f $marsbased_remote
+git push -f $origin_remote
+
+h2 "Done!"
