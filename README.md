@@ -1,6 +1,6 @@
 # git-helpers
 
-A simple library of custom commands to git
+A simple library of ig tcustom commands 
 
 ## Commands
 
