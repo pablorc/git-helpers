@@ -14,5 +14,5 @@ Working with a repo and a private fork:
 1. Clone folder
 1. Add folder to PATH
 1. Copy `envs.example.sh` to `envs.sh` and fill with your data
-1. Setup variables in each file
+1. Double-check that git-*files have exec permission
 1. Use it!
