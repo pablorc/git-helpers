@@ -16,3 +16,7 @@ Working with a repo and a private fork:
 1. Copy `envs.example.sh` to `envs.sh` and fill with your data
 1. Double-check that git-*files have exec permission
 1. Use it!
+
+## TODO
+
+- Support for -h

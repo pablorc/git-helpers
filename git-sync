@@ -10,15 +10,15 @@ h1 "Sync $branch"
 
 # Update master and push to fork
 h2 "(1/2) Updating master..."
-git checkout master
-git pull $spin_remote
-git push $origin_remote
+exec "git checkout master"
+exec "git pull $spin_remote"
+exec "git push $origin_remote"
 
 #Rebase branch to master and force push it to both remotes
 h2 "(2/2) Rebasing current branch..."
-git checkout $branch
-git rebase master
-git push -f $marsbased_remote
-git push -f $origin_remote
+exec "git checkout $branch"
+exec "git rebase master"
+exec "git push -f $marsbased_remote"
+exec "git push -f $origin_remote"
 
 h2 "Done!"

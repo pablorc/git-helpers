@@ -12,5 +12,10 @@ function h2 {
   h1 "$1"
 }
 
+function exec {
+  h1 "$1"
+  $1
+}
+
 # Load variables
 source envs.sh
