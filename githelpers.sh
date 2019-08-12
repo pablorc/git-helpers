@@ -11,3 +11,6 @@ function h2 {
   echo ""
   h1 "$1"
 }
+
+# Load variables
+source envs.sh

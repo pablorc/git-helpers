@@ -2,11 +2,6 @@
 
 # Push changes to two remotes at once
 
-#Conf
-origin_remote="origin"
-fork_remote="mb"
-# End conf
-
 source "githelpers.sh"
 
 h1 "Pushing to both remotes"

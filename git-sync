@@ -2,11 +2,6 @@
 
 # Pulls master from original repo, syncs it up to the folk, and rebases current work to the new master
 
-# Conf
-origin_remote="origin"
-fork_remote="mb"
-# End conf
-
 source githelpers.sh
 
 # Get current branch
