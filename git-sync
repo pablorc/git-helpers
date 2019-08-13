@@ -2,7 +2,7 @@
 
 # Pulls master from original repo, syncs it up to the folk, and rebases current work to the new master
 
-source githelpers.sh
+source helpers.sh
 
 # Get current branch
 branch="$(current_branch)"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source githelpers.sh
+source helpers.sh
 
 # Get current branch
 branch="$(current_branch)"

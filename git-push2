@@ -3,7 +3,7 @@
 # Push changes to two remotes at once
 # It allows pass extra parameters to both push commands. As instance: git push2 -f
 
-source "githelpers.sh"
+source "helpers.sh"
 
 h1 "Pushing to both remotes"
 
