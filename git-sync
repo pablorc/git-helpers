@@ -5,7 +5,7 @@
 source githelpers.sh
 
 # Get current branch
-branch="$(git branch | grep \* | cut -d ' ' -f2)"
+branch="$(current_branch)"
 h1 "Sync $branch"
 
 # Update master and push to fork

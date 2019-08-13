@@ -19,3 +19,7 @@ function exec {
 
 # Load variables
 source envs.sh
+
+function current_branch {
+  echo "$(git branch | grep \* | cut -d ' ' -f2)"
+}

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source githelpers.sh
+
+# Get current branch
+branch="$(current_branch)"
+h1 "Set upstream for $branch"
+
+remote=${1:-$origin_remote} 
+
+exec "git push --set-upstream origin $branch"
