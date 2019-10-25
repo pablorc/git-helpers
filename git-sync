@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Pulls master from original repo, syncs it up to the folk, and rebases current work to the new master
+# Pulls master from original repo, pushes last changes to the fork repo, 
+# rebases current work to the new master and pushes it to both remotes
 
 source helpers.sh
 
