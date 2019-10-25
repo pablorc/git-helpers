@@ -9,6 +9,7 @@ Working with a repo and a private fork:
 - *git push2*: Pushes to both remotes at once
 - *git sync*: Syncs master between repositories and rebases current branch to the last version of master
 - *git upstream*: Creates in the desired remote(origin by default) the current branch
+- *git squash*: Opens an interactive rebase between you current branch and master
 
 ## Setup
 
@@ -21,3 +22,4 @@ Working with a repo and a private fork:
 ## TODO
 
 - Support for -h
+- Improve squash to do an actual complete squash

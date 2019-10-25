@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Opens a interactive rebase of all branch commits
+
+source "helpers.sh"
+
+branch="$(current_branch)"
+
+h1 "Squashing commits from $branch since master"
+
+sha_id="$(git merge-base $branch master)"
+exec "git rebase -i $sha_id"
+
+h2 "Done!"
