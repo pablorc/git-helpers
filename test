@@ -1,0 +1,21 @@
+echo "---"
+echo "->1"
+echo $1
+echo "->2"
+echo $2
+
+if [ -z $1 ]
+then
+  echo "NO PARAM"
+fi
+
+if [ -n $1 ]
+then
+  echo "GREATER"
+  echo "-$1-"
+fi
+
+if [ -z $1 ]
+then
+  echo "EMPTY"
+fi

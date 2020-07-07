@@ -1,24 +1,32 @@
 #!/bin/bash
 
-# Pulls master from original repo, pushes last changes to the fork repo, 
+# Pulls master from original repo, pushes last changes to the fork repo,
 # rebases current work to the new master and pushes it to both remotes
+# Change base branch passing it as an argument
 
 source helpers.sh
 
 # Get current branch
 branch="$(current_branch)"
-h1 "Sync $branch"
+
+base_branch=$1
+if [ -z $1 ]
+then
+  base_branch="master"
+fi
+
+h1 "Syncing $branch on top of $base_branch"
 
 # Update master and push to fork
-h2 "(1/2) Updating master..."
-exec "git checkout master"
+h2 "(1/2) Updating $base_branch..."
+exec "git checkout $base_branch"
 exec "git pull $origin_remote"
 exec "git push $fork_remote"
 
 #Rebase branch to master and force push it to both remotes
 h2 "(2/2) Rebasing current branch..."
 exec "git checkout $branch"
-exec "git rebase master"
+exec "git rebase $base_branch"
 exec "git push -f $fork_remote"
 exec "git push -f $origin_remote"
 

@@ -6,9 +6,15 @@ source "helpers.sh"
 
 branch="$(current_branch)"
 
-h1 "Squashing commits from $branch since master"
+base_branch=$1
+if [ -z $1 ]
+then
+  base_branch="master"
+fi
 
-sha_id="$(git merge-base $branch master)"
+h1 "Squashing commits from $branch since $base_branch"
+
+sha_id="$(git merge-base $branch $base_branch)"
 exec "git rebase -i $sha_id"
 
 h2 "Done!"
