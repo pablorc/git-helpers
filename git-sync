@@ -15,19 +15,22 @@ then
   base_branch="master"
 fi
 
+if [ "$branch" = "master"  ]
+then
+  h1 "Branch is master. Aborting"
+  exit
+fi
+
 h1 "Syncing $branch on top of $base_branch"
 
-# Update master and push to fork
 h2 "(1/2) Updating $base_branch..."
 exec "git checkout $base_branch"
 exec "git pull $origin_remote"
-exec "git push $fork_remote"
 
-#Rebase branch to master and force push it to both remotes
+#Rebase branch to master and force push it
 h2 "(2/2) Rebasing current branch..."
 exec "git checkout $branch"
 exec "git rebase $base_branch"
-exec "git push -f $fork_remote"
 exec "git push -f $origin_remote"
 
 h2 "Done!"
