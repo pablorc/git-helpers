@@ -12,12 +12,18 @@ branch="$(current_branch)"
 base_branch=$1
 if [ -z $1 ]
 then
-  base_branch="master"
+  base_branch="main"
 fi
 
 if [ "$branch" = "master"  ]
 then
   h1 "Branch is master. Aborting"
+  exit
+fi
+
+if [ "$branch" = "main"  ]
+then
+  h1 "Branch is main. Aborting"
   exit
 fi
 
@@ -27,10 +33,10 @@ h2 "(1/2) Updating $base_branch..."
 exec "git checkout $base_branch"
 exec "git pull $origin_remote"
 
-#Rebase branch to master and force push it
+#Rebase branch to main and force push it
 h2 "(2/2) Rebasing current branch..."
 exec "git checkout $branch"
 exec "git rebase $base_branch"
-exec "git push -f $origin_remote"
+exec "git push $origin_remote"
 
 h2 "Done!"

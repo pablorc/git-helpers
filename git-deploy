@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Pulls local branch from original repo, pushes last changes to the other remote,
+# Change base branch passing it as an argument
+
+source helpers.sh
+
+# Get current branch
+branch="$(current_branch)"
+
+
+if [ "$branch" = "master"  ]
+then
+  h1 "Branch is master. Aborting"
+  exit
+fi
+
+if [ "$branch" = "main"  ]
+then
+  h1 "Branch is main. Aborting"
+  exit
+fi
+
+h1 "Syncing $branch to $deploy_remote"
+
+exec "git pull $origin_remote"
+
+exec "git push $deploy_remote"
+
+h2 "Done!"
+

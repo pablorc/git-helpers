@@ -1,2 +1,2 @@
 origin_remote="origin"
-fork_remote="fork"
+deploy_remote="another-remote"

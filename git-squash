@@ -9,7 +9,7 @@ branch="$(current_branch)"
 base_branch=$1
 if [ -z $1 ]
 then
-  base_branch="master"
+  base_branch="main"
 fi
 
 h1 "Squashing commits from $branch since $base_branch"
